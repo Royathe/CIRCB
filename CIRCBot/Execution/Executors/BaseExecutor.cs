@@ -169,7 +169,7 @@ namespace CIRCBot.Execution
         {
             Message = message;
             MessageToAdmin = String.Empty;
-            if(message.Command == Library.EMPTY_COMMAND)
+            if(message.Command == Msg.EMPTY_COMMAND)
             {
                 return;
             }

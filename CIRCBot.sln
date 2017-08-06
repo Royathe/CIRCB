@@ -5,6 +5,16 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIRCBot", "CIRCBot\CIRCBot.csproj", "{E8CB9621-6970-44BB-AC96-F92B3F473F29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIRCBot.Tools", "CIRCBot.Tools\CIRCBot.Tools.csproj", "{6BF497E1-A275-479C-BC73-7A8E935F78DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIRCBot.Apis", "CIRCBot.Apis\CIRCBot.Apis.csproj", "{949105CD-2AE8-4731-8E86-8DA89FFC56EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIRCBot.XTimers", "CIRCBot.XTimers\CIRCBot.XTimers.csproj", "{D5565DB9-AC20-4FC2-A8B3-05C65EB54ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIRCBot.Comparators", "CIRCBot.Comparators\CIRCBot.Comparators.csproj", "{6EF3D924-B55E-4736-AFA3-55558F3A5B8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIRCBot.Database", "CIRCBot.Database\CIRCBot.Database.csproj", "{D219AED0-96E3-494C-BA3F-F8D2D0D730DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{E8CB9621-6970-44BB-AC96-F92B3F473F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8CB9621-6970-44BB-AC96-F92B3F473F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8CB9621-6970-44BB-AC96-F92B3F473F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF497E1-A275-479C-BC73-7A8E935F78DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF497E1-A275-479C-BC73-7A8E935F78DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF497E1-A275-479C-BC73-7A8E935F78DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF497E1-A275-479C-BC73-7A8E935F78DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949105CD-2AE8-4731-8E86-8DA89FFC56EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949105CD-2AE8-4731-8E86-8DA89FFC56EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949105CD-2AE8-4731-8E86-8DA89FFC56EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949105CD-2AE8-4731-8E86-8DA89FFC56EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5565DB9-AC20-4FC2-A8B3-05C65EB54ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5565DB9-AC20-4FC2-A8B3-05C65EB54ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5565DB9-AC20-4FC2-A8B3-05C65EB54ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5565DB9-AC20-4FC2-A8B3-05C65EB54ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF3D924-B55E-4736-AFA3-55558F3A5B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF3D924-B55E-4736-AFA3-55558F3A5B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF3D924-B55E-4736-AFA3-55558F3A5B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF3D924-B55E-4736-AFA3-55558F3A5B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D219AED0-96E3-494C-BA3F-F8D2D0D730DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D219AED0-96E3-494C-BA3F-F8D2D0D730DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D219AED0-96E3-494C-BA3F-F8D2D0D730DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D219AED0-96E3-494C-BA3F-F8D2D0D730DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

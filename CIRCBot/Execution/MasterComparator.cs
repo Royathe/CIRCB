@@ -1,4 +1,4 @@
-﻿using CIRCBot.Execution.Comparators;
+﻿using CIRCBot.Comparators;
 using System;
 using System.Collections.Generic;
 

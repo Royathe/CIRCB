@@ -290,4 +290,5 @@ __pycache__/
 # User defined
 App.config
 *.sql
+city.list.json
 Deprecated/

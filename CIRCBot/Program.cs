@@ -36,12 +36,13 @@ namespace CIRCBot
         {
             try
             {
+                Query.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionStringDB"].ConnectionString;
                 Query.LoadDatabase();
                 Console.WriteLine("Users and admins addresses loaded.");
                 Console.WriteLine("USERS");
                 foreach (User user in Users.All)
                 {
-                    Console.WriteLine(Library.IND + user.Username + " ||| IsAdmin: " + user.IsAdmin);
+                    Console.WriteLine(TXT.IND + user.Username + " ||| IsAdmin: " + user.IsAdmin);
                 }
                 Console.WriteLine();
                 Console.WriteLine();
@@ -52,20 +53,14 @@ namespace CIRCBot
                 Console.WriteLine("COMMANDS");
                 foreach (var entry in Cmd.Simple)
                 {
-                    Console.WriteLine(Library.IND + entry.Key + " ||| " + entry.Value);
+                    Console.WriteLine(TXT.IND + entry.Key + " ||| " + entry.Value);
                 }
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine();
                 
-                Libraries.Cities.Load();
+                Apis.Repositories.RepositoryLoader.Load();
                 Console.WriteLine("Cities loaded.");
-                Console.WriteLine(Library.IND + Libraries.Cities.CountryCount + " countries.");
-                Console.WriteLine(Library.IND + Libraries.Cities.CityCount + " cities.");
-
-                Console.WriteLine();
-
-                Libraries.WeatherConditions.Load();
                 Console.WriteLine("Weather conditions loaded.");
 
                 Console.WriteLine();
@@ -154,7 +149,7 @@ namespace CIRCBot
 
         private void IrcCommandReceived(string IrcCommand, string Channel)
         {
-            if (IrcCommand.Contains(Library.MESSAGE_IDENT) && IrcCommand.Contains(Library.COMMAND_IDENT))
+            if (IrcCommand.Contains(Msg.MESSAGE_IDENT) && IrcCommand.Contains(Msg.COMMAND_IDENT))
             {
                 Msg message = new Msg(IrcCommand, IrcObject.Channel);
                 if(message.IsValid)

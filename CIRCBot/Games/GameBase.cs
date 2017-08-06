@@ -1,4 +1,6 @@
-﻿namespace CIRCBot.Games
+﻿using CIRCBot.XTimers;
+
+namespace CIRCBot.Games
 {
     /// <summary>
     /// Base class of Bot Games.

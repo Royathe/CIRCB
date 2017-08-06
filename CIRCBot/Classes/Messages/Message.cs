@@ -4,9 +4,27 @@ namespace CIRCBot
 {
     class Msg
     {
+        #region Constants
+
+        /// <summary>
+        /// The beginning of a command
+        /// </summary>
+        public const string COMMAND_IDENT = "!";
+
+        /// <summary>
+        /// Identifies a raw StreamReader input as being sent by a user.
+        /// </summary>
+        public const string MESSAGE_IDENT = " PRIVMSG ";
+
+        /// <summary>
+        /// Dictionary entry for an invalid command.
+        /// </summary>
+        public const string EMPTY_COMMAND = "none";
+
+        #endregion Constants
 
         #region Command indexing
-        
+
         /// <summary>
         /// The next parameter to check the value of.
         /// </summary>
@@ -106,7 +124,7 @@ namespace CIRCBot
 
             CommandParts = new string[]
             {
-                Library.EMPTY_COMMAND
+                EMPTY_COMMAND
             };
 
             string[] inputParts = Raw.Split(' ');
@@ -149,11 +167,11 @@ namespace CIRCBot
                 return;
             }
 
-            if (Text.Contains(Library.COMMAND_IDENT))
+            if (Text.Contains(COMMAND_IDENT))
             {
                 // Take part of the text that starts after the '!' character. 
                 // Split resulting text by spaces to a maximum of 6 strings.
-                string[] commandParts = Text.Substring(Text.IndexOf(Library.COMMAND_IDENT) + 1).SplitMax(' ', 6);
+                string[] commandParts = Text.Substring(Text.IndexOf(COMMAND_IDENT) + 1).SplitMax(' ', 6);
 
                 // Commands parameters are string in the array after the first string.
                 CommandParts = commandParts;
@@ -175,7 +193,7 @@ namespace CIRCBot
                 (IsAdmin ? "Admin | " : "") +
                 (IsPrivate ? "Private" : "Public") +
                 " message from " + From.Username + ": " + Text);
-            if (Command != Library.EMPTY_COMMAND) { Console.WriteLine("    Command: " + Command + " | Params: " + cmdParamString); }
+            if (Command != EMPTY_COMMAND) { Console.WriteLine("    Command: " + Command + " | Params: " + cmdParamString); }
             Console.WriteLine();
         }
     }

@@ -13,7 +13,7 @@
         {
             Matched = false;
             OrigCommand = command;
-            ValidCommand = Library.EMPTY_COMMAND;
+            ValidCommand = Msg.EMPTY_COMMAND;
         }
 
         public void Match(string validCommand)

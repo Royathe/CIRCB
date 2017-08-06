@@ -166,18 +166,18 @@ namespace CIRCBot.Execution.Executors
 
                 date = date.AddHours(hour);
 
-                weather = GM.WeatherOrForecast(city, country, date);
+                weather = MasterAPI.WeatherOrForecast(city, country, date);
             }
             else
             {
-                weather = GM.WeatherOrForecast(city, country, null);
+                weather = MasterAPI.WeatherOrForecast(city, country, null);
             }
 
             if(weather != null)
             {
                 string message = 
                     weather.City.Name + " " + weather.Date.ToShortDateTimeString() + 
-                    " | Lämpötila: " + weather.Temperature + Library.CENTIGRADE + 
+                    " | Lämpötila: " + weather.Temperature + TXT.CENTIGRADE + 
                     ", tuntuu kuin: " + weather.FeelsLike +
                     " | Pilvisyys: " + weather.Cloudiness + "%" + 
                     " | Ilmankosteus: " + weather.Humidity + "%" + 
@@ -190,7 +190,7 @@ namespace CIRCBot.Execution.Executors
 
         private void cmd_currentTimeDiff()
         {
-            DateTime now = GM.CurrentTime();
+            DateTime now = MasterAPI.CurrentTime();
 
             TimeSpan diff = now - DateTime.Now;
 
@@ -199,7 +199,7 @@ namespace CIRCBot.Execution.Executors
 
         private void cmd_currentTime()
         {
-            DateTime now = GM.CurrentTime();
+            DateTime now = MasterAPI.CurrentTime();
 
             Bot.Say(now.ToString());
         }

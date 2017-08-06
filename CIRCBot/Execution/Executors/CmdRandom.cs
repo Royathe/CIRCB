@@ -119,7 +119,7 @@ namespace CIRCBot.Execution.Executors
 
         private void Link(string url)
         {
-            Bot.Say(GM.GetRedirectResult(url));
+            Bot.Say(Utils.GetRedirectResult(url));
         }
 
         #endregion Private methods

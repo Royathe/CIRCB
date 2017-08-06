@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 
 namespace CIRCBot.Execution.Executors
 {
@@ -10,6 +9,27 @@ namespace CIRCBot.Execution.Executors
     class CmdGeneral : BaseExecutor, IExecutor
     {
 
+        #region Library
+        
+        private class Library
+        {
+            internal const string Hv = "凸( ͡° ͜ʖ ͡°)凸";
+
+            internal const string Lenny = "( ͡° ͜ʖ ͡°)";
+
+            internal static readonly string[] Overwatch = new string[]
+            {
+            "ny {0}Overwatchii",
+            "{0}ylikellot tulille",
+            "{0}päivän turpasaunaan",
+            "{0}röllii overgay",
+            "tappakaa se vitun parah",
+            "Kids face! t. reinisydän"
+            };
+        }
+
+        #endregion Library
+
         private readonly Random rnd;
 
         public CmdGeneral(BotMessager messager) : base(messager)
@@ -19,7 +39,6 @@ namespace CIRCBot.Execution.Executors
 
             Add("Satunnainen riemurasia media", cmd_rr, "rr");
             Add("Satunnainen naurunappula media", cmd_nn, "nn");
-            //Add("Satunnainen nn tai rr media", cmd_topkek, "topkek");
             Add("Satunnaista tekstiä", cmd_eijasa, "eijasa");
             Add("Satunnainen Overwatch kirjaston teksti", cmd_ow, "overwatch", "ow");
             Add("Haistata vitut", cmd_hv, "hv");
@@ -37,12 +56,12 @@ namespace CIRCBot.Execution.Executors
 
         private void cmd_rr()
         {
-            Bot.Say(GM.GetRedirectResult("http://www.riemurasia.net/jylppy/random.php"));
+            Bot.Say(Utils.GetRedirectResult("http://www.riemurasia.net/jylppy/random.php"));
         }
 
         private void cmd_nn()
         {
-            Bot.Say(GM.GetRedirectResult("http://naurunappula.com/random.php?c=1"));
+            Bot.Say(Utils.GetRedirectResult("http://naurunappula.com/random.php?c=1"));
         }
 
         private void cmd_lenny()
@@ -126,21 +145,6 @@ namespace CIRCBot.Execution.Executors
         #endregion Commands
 
         #region Private methods
-
-        ///// <summary>
-        ///// Get the final url of a redirecting url
-        ///// </summary>
-        ///// <param name="url">url to call that will redirect</param>
-        ///// <returns>the url redirected to</returns>
-        //private string GetRedirectResult(string url)
-        //{
-        //    HttpWebRequest httpRequest = WebRequest.Create(url) as HttpWebRequest;
-        //    httpRequest.Timeout = 500;
-        //    using (HttpWebResponse response = httpRequest.GetResponse() as HttpWebResponse)
-        //    {
-        //        return response.ResponseUri.ToString();
-        //    }
-        //}
 
         private string RandomLetter
         {

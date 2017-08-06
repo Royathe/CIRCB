@@ -52,44 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Apis\OpenWeatherAPI.cs" />
-    <Compile Include="Apis\TimeIsAPI.cs" />
-    <Compile Include="Apis\WebParser.cs" />
-    <Compile Include="Apis\WebProcessorBase.cs" />
-    <Compile Include="Attributes\ClassName.cs" />
-    <Compile Include="Attributes\Extra.cs" />
-    <Compile Include="Attributes\JSONMap.cs" />
-    <Compile Include="Attributes\Order.cs" />
-    <Compile Include="Classes\Weather\City.cs" />
-    <Compile Include="Classes\Color.cs" />
+    <Compile Include="Apis\MasterAPI.cs" />
     <Compile Include="Classes\Messages\ComparatorResult.cs" />
     <Compile Include="Bot\BotMessager.cs" />
     <Compile Include="Bot\IRC.cs" />
     <Compile Include="Bot\IRCSettings.cs" />
     <Compile Include="Classes\Messages\CommandAction.cs" />
-    <Compile Include="Classes\Timers\LockTimer.cs" />
     <Compile Include="Classes\Messages\Message.cs" />
-    <Compile Include="Classes\Database\ParamInt.cs" />
     <Compile Include="Classes\Player.cs" />
-    <Compile Include="Classes\PositionString.cs" />
-    <Compile Include="Classes\Database\Score.cs" />
-    <Compile Include="Classes\Database\Season.cs" />
-    <Compile Include="Classes\Timers\SoloTimer.cs" />
     <Compile Include="Classes\Statistics\Statistics.cs" />
     <Compile Include="Classes\Statistics\StatisticsRow.cs" />
-    <Compile Include="Classes\Timers\TimerBase.cs" />
-    <Compile Include="Classes\Database\User.cs" />
-    <Compile Include="Classes\Weather\Weather.cs" />
-    <Compile Include="Execution\Comparators\BaseComparator.cs" />
-    <Compile Include="Execution\Comparators\ConsonantComparator.cs" />
-    <Compile Include="Execution\Comparators\SyllableComparator.cs" />
-    <Compile Include="Execution\Comparators\SyllableReplacer.cs" />
     <Compile Include="Execution\Executors\CmdLink.cs" />
     <Compile Include="Execution\Executors\CmdRandom.cs" />
     <Compile Include="Execution\Executors\CmdStatistics.cs" />
-    <Compile Include="Extensions\DateTimeExtensions.cs" />
-    <Compile Include="Extensions\DictionaryExtensions.cs" />
-    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="General\Extensions.cs" />
     <Compile Include="Games\BlindHoldem.cs" />
     <Compile Include="Games\Classes\Card.cs" />
     <Compile Include="Games\Classes\Deck.cs" />
@@ -97,8 +73,6 @@
     <Compile Include="Games\Classes\PlayerPot.cs" />
     <Compile Include="Games\HoldemTournament.cs" />
     <Compile Include="Games\Tools\Hand.cs" />
-    <Compile Include="Global\GlobalMethods.cs" />
-    <Compile Include="Interfaces\IComparator.cs" />
     <Compile Include="Execution\Executors\BaseExecutor.cs" />
     <Compile Include="Execution\Executors\CmdAdmin.cs" />
     <Compile Include="Execution\Executors\CmdGames.cs" />
@@ -110,42 +84,39 @@
     <Compile Include="Games\Holdem.cs" />
     <Compile Include="Interfaces\IExecutor.cs" />
     <Compile Include="Interfaces\IGame.cs" />
-    <Compile Include="Libraries\Cities.cs" />
-    <Compile Include="Libraries\Commands.cs" />
-    <Compile Include="Libraries\Library.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Libraries\Options.cs" />
-    <Compile Include="Libraries\Params.cs" />
-    <Compile Include="Libraries\Seasons.cs" />
-    <Compile Include="Libraries\TimerLocks.cs" />
-    <Compile Include="Libraries\Users.cs" />
-    <Compile Include="Libraries\WeatherConditions.cs" />
+    <Compile Include="General\Options.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sql\ClassMapper.cs" />
-    <Compile Include="Sql\DBHandler.cs" />
-    <Compile Include="Sql\Mapper.cs" />
-    <Compile Include="Sql\Query.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="App_git.config" />
-    <None Include="JSON\city.list.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sql\Procedures\usp_AddAddmin.sql" />
-    <Content Include="Sql\Procedures\usp_AddSimpleCommand.sql" />
-    <Content Include="Sql\Procedures\usp_EndSeason.sql" />
-    <Content Include="Sql\Procedures\usp_ReplaceSimpleCommand.sql" />
-    <Content Include="Sql\Procedures\usp_Salaries.sql" />
-    <Content Include="Sql\Procedures\usp_TestConnection.sql" />
-    <Content Include="Sql\Procedures\usp_UpdateAllUserFields.sql" />
-    <Content Include="Sql\Views\uvw_Users.sql" />
+    <ProjectReference Include="..\CIRCBot.Apis\CIRCBot.Apis.csproj">
+      <Project>{949105cd-2ae8-4731-8e86-8da89ffc56ef}</Project>
+      <Name>CIRCBot.Apis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CIRCBot.Comparators\CIRCBot.Comparators.csproj">
+      <Project>{6ef3d924-b55e-4736-afa3-55558f3a5b8a}</Project>
+      <Name>CIRCBot.Comparators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CIRCBot.Database\CIRCBot.Database.csproj">
+      <Project>{d219aed0-96e3-494c-ba3f-f8d2d0d730dc}</Project>
+      <Name>CIRCBot.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CIRCBot.Tools\CIRCBot.Tools.csproj">
+      <Project>{6bf497e1-a275-479c-bc73-7a8e935f78df}</Project>
+      <Name>CIRCBot.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CIRCBot.XTimers\CIRCBot.XTimers.csproj">
+      <Project>{d5565db9-ac20-4fc2-a8b3-05c65eb54ece}</Project>
+      <Name>CIRCBot.XTimers</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

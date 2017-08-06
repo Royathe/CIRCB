@@ -1,4 +1,5 @@
 ﻿using System;
+using CIRCBot.XTimers;
 
 namespace CIRCBot
 {

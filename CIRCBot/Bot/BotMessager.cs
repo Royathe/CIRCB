@@ -1,4 +1,6 @@
-﻿namespace CIRCBot
+﻿using CIRCBot.XTimers;
+
+namespace CIRCBot
 {
     public delegate void BotSay(string message, string to = "");
     public delegate void BotNotice(string message, string to = "");
